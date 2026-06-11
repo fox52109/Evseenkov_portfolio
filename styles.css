@@ -1,0 +1,243 @@
+:root {
+    --primary: #0ea5e9;
+    --accent: #ffcc00;
+    --text: #1e2937;
+    --text-light: #64748b;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background-color: var(--bg);
+    background-image: 
+        linear-gradient(rgba(15, 23, 42, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(248, 250, 252, 0.97);
+    backdrop-filter: blur(16px);
+    z-index: 1000;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+nav {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul a:hover {
+    color: var(--accent);
+}
+
+/* HERO */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 25% 30%, rgba(255, 204, 0, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 75% 70%, rgba(14, 165, 233, 0.18) 0%, transparent 60%);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #f0f9ff, #ffeb99);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content .specialty {
+    font-size: 1.75rem;
+    color: #bae6fd;
+    margin-bottom: 0.8rem;
+}
+
+.hero-content .group {
+    font-size: 1.35rem;
+    opacity: 0.9;
+}
+
+.btn {
+    margin-top: 2rem;
+    background: var(--accent);
+    color: #1e2937;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(255, 204, 0, 0.4);
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 204, 0, 0.6);
+}
+
+/* СЕКЦИИ */
+section {
+    padding: 110px 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 4rem;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    margin: 20px auto;
+    border-radius: 4px;
+}
+
+/* СЕРТИФИКАТЫ */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2.2rem;
+}
+
+.certificate-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.certificate-card:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.14);
+}
+
+.cert-preview {
+    height: 260px;
+    position: relative;
+}
+
+.cert-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.certificate-card:hover .preview-overlay {
+    opacity: 1;
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.95);
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 1100px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--accent);
+}
+
+.modal-header {
+    padding: 1.2rem 2rem;
+    background: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.close-modal {
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.modal-body {
+    height: 82vh;
+    background: #f1f5f9;
+}
+
+.modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
