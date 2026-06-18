@@ -1,4 +1,4 @@
-// Плавная прокрутка + мобильное меню (оставляем как было)
+// Плавная прокрутка
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -7,16 +7,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const headerOffset = 80;
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }
     });
 });
 
-// Мобильное меню (гамбургер)
+// Мобильное меню
 const hamburger = document.createElement('div');
 hamburger.className = 'hamburger';
 hamburger.innerHTML = `<span></span><span></span><span></span>`;
@@ -51,13 +47,13 @@ const closeBtn = document.querySelector('.close-modal');
 
 function openCertificate(pdfUrl, title) {
     modalTitle.textContent = title;
-    pdfViewer.src = pdfUrl + "#toolbar=0&navpanes=0&scrollbar=1"; // улучшенный вид PDF
+    pdfViewer.src = pdfUrl + "#toolbar=0&navpanes=0&scrollbar=1";
     modal.style.display = 'flex';
 }
 
 function closeCertificate() {
     modal.style.display = 'none';
-    pdfViewer.src = '';
+    setTimeout(() => { pdfViewer.src = ''; }, 300);
 }
 
 closeBtn.addEventListener('click', closeCertificate);
@@ -65,10 +61,10 @@ modal.addEventListener('click', e => {
     if (e.target === modal) closeCertificate();
 });
 document.addEventListener('keydown', e => {
-    if (e.key === "Escape") closeCertificate();
+    if (e.key === "Escape" && modal.style.display === 'flex') closeCertificate();
 });
 
-// Клик по карточкам
+// Открытие по клику на карточку
 document.getElementById('certificates-grid').addEventListener('click', e => {
     const card = e.target.closest('.certificate-card');
     if (card) {

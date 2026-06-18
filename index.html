@@ -11,7 +11,7 @@
     <header>
         <nav>
             <div class="logo">
-                <h1>Евсеенков Михаил Павлович</h1>
+                <h1>Евсеенков <span class="accent">Михаил</span> Павлович</h1>
             </div>
             <ul>
                 <li><a href="#hero">Главная</a></li>
@@ -26,29 +26,34 @@
     <!-- HERO -->
     <section id="hero">
         <div class="hero-content">
-            <h2>Портфолио</h2>
+            <div class="hero-badge">ПОРТФОЛИО</div>
             <h1>Евсеенков Михаил Павлович</h1>
-            <p class="specialty">Специальность: 09.02.07 «Информационные системы и про-граммирование»
-            </p>
+            <p class="specialty">09.02.07 «Информационные системы и программирование»</p>
             <p class="group">Группа ИСП 9-2</p>
-            <a href="#certificates" class="btn">Посмотреть достижения</a>
+            
+            <div class="hero-lines"></div>
+            
+            <a href="#certificates" class="btn">ОТКРЫТЬ АРХИВ ДОСТИЖЕНИЙ</a>
         </div>
+        
+        <div class="tech-overlay"></div>
     </section>
 
     <!-- ОБО МНЕ -->
     <section id="about">
         <h2>Обо мне</h2>
-        <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
-            Здесь напишите краткую информацию о себе, своих навыках, опыте и целях. 
-            Можно добавить пару предложений в футуристичном стиле.
-        </p>
+        <div class="about-content">
+            <p>Студент специальности «Информационные системы и программирование». Занимаюсь графическим дизайном, а также изучаю другие направления дизайна. Создаю графический контент для цифровых сообществ, 
+    что позволяет сочетать технические знания с креативным подходом. 
+    Регулярно участвую в олимпиадах и профильных конкурсах, стремясь к постоянному профессиональному росту.</p>
+        </div>
     </section>
 
     <!-- СЕРТИФИКАТЫ -->
     <section id="certificates">
         <h2>Сертификаты и достижения</h2>
         <div class="certificates-grid" id="certificates-grid">
-
+            
             <div class="certificate-card" 
                  data-pdf="certificate1.pdf" 
                  data-title="Всероссийский космический диктант">
@@ -142,14 +147,14 @@
                        
             <div class="certificate-card" 
                  data-pdf="certificate6.jpg" 
-                 data-title="XI Всероссийский онлайн-чемпионат «Изучи интернет — управляй им»">
+                 data-title="XI Всероссийский онлайн-чемпионат «Изучи интернет — управляй им»">
                 <div class="cert-preview">
                     <img src="preview6.jpg" alt="Сертификат 6">
                     <div class="preview-overlay">
                         <span>👁 Посмотреть PDF</span>
                     </div>
                 </div>
-                <h3>XI Всероссийский онлайн-чемпионат «Изучи интернет — управляй им»</h3>
+                <h3>XI Всероссийский онлайн-чемпионат «Изучи интернет — управляй им»</h3>
                 <p>Декабрь 2022</p>
             </div>
           
@@ -221,27 +226,19 @@
         </div>
     </section>
 
-    <!-- ПРОЕКТЫ (заготовка) -->
-    <section id="projects">
-        <h2>Проекты</h2>
-        <p style="text-align: center; font-size: 1.2rem;">
-            Здесь будут ваши проекты. Готов добавить карточки проектов в том же стиле.
-        </p>
-    </section>
-
     <!-- КОНТАКТЫ -->
     <section id="contacts">
         <h2>Контакты</h2>
         <div class="contact-info">
             <p>Email: <a href="mailto:Fox5210909@yandex.ru">Fox5210909@yandex.ru</a></p>
             <p>Телефон: +7 (978) 691-33-14</p>
-            <p>Telegram / GitHub / LinkedIn</p>
+            <p><a href="https://vk.com/scvrxcrxw">VK</a></p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Евсеенков Михаил Павлович</p>
+        <p>© 2026 Евсеенков Михаил Павлович</p>
     </footer>
 
     <script src="script.js"></script>

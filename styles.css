@@ -1,243 +1,380 @@
 :root {
-    --primary: #0ea5e9;
-    --accent: #ffcc00;
-    --text: #1e2937;
-    --text-light: #64748b;
-    --bg: #f8fafc;
-    --card-bg: #ffffff;
-    --border: #e2e8f0;
+    --yellow: #ffcc00;
+    --blue: #0ea5e9;
+    --dark: #0a0f1c;
+    --light: #f8fafc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    line-height: 1.7;
-    color: var(--text);
-    background-color: var(--bg);
-    background-image: 
-        linear-gradient(rgba(15, 23, 42, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.015) 1px, transparent 1px);
-    background-size: 60px 60px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--light);
+    color: #1e2937;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* HEADER */
 header {
     position: sticky;
     top: 0;
-    background: rgba(248, 250, 252, 0.97);
-    backdrop-filter: blur(16px);
+    background: rgba(10, 15, 28, 0.95);
+    backdrop-filter: blur(12px);
     z-index: 1000;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 2px solid var(--yellow);
 }
 
 nav {
-    max-width: 1280px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 1.1rem 2.5rem;
+    padding: 1.2rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo h1 {
-    font-size: 1.65rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: white;
 }
+
+.accent { color: var(--yellow); }
 
 nav ul {
     display: flex;
-    gap: 2.2rem;
+    gap: 2.5rem;
     list-style: none;
 }
 
 nav ul a {
+    color: white;
     text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     transition: color 0.3s;
 }
 
 nav ul a:hover {
-    color: var(--accent);
+    color: var(--yellow);
 }
 
-/* HERO */
+/* HERO — очень в стиле Endfield */
 #hero {
     min-height: 100vh;
+    background: linear-gradient(135deg, #0a0f1c 0%, #1e3a8a 100%);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
-    color: white;
     position: relative;
     overflow: hidden;
 }
 
-#hero::before {
-    content: '';
+.tech-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 25% 30%, rgba(255, 204, 0, 0.18) 0%, transparent 60%),
-                radial-gradient(circle at 75% 70%, rgba(14, 165, 233, 0.18) 0%, transparent 60%);
+    background: 
+        linear-gradient(transparent, rgba(255,204,0,0.08)),
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+    pointer-events: none;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: #111;
+    padding: 6px 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    border: 2px solid #111;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #f0f9ff, #ffeb99);
+    font-size: 4.8rem;
+    font-weight: 900;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    background: linear-gradient(90deg, white, var(--yellow));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.hero-content .specialty {
-    font-size: 1.75rem;
-    color: #bae6fd;
-    margin-bottom: 0.8rem;
-}
-
-.hero-content .group {
-    font-size: 1.35rem;
-    opacity: 0.9;
+.specialty {
+    font-size: 2rem;
+    color: var(--yellow);
+    margin: 0.5rem 0;
+    letter-spacing: 2px;
 }
 
 .btn {
-    margin-top: 2rem;
-    background: var(--accent);
-    color: #1e2937;
-    padding: 16px 40px;
-    border-radius: 50px;
+    margin-top: 3rem;
+    display: inline-block;
+    background: transparent;
+    color: var(--yellow);
+    border: 3px solid var(--yellow);
+    padding: 18px 50px;
+    font-size: 1.3rem;
     font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 10px 30px rgba(255, 204, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 3px;
     transition: all 0.4s;
 }
 
 .btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 204, 0, 0.6);
+    background: var(--yellow);
+    color: #111;
+    box-shadow: 0 0 40px rgba(255, 204, 0, 0.7);
 }
 
-/* СЕКЦИИ */
+/* Секции */
 section {
-    padding: 110px 2rem;
-    max-width: 1280px;
+    padding: 120px 2rem;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 h2 {
+    font-size: 3rem;
     text-align: center;
-    font-size: 2.7rem;
     margin-bottom: 4rem;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
 }
 
 h2::after {
     content: '';
-    display: block;
-    width: 70px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
     height: 4px;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    margin: 20px auto;
-    border-radius: 4px;
+    background: linear-gradient(to right, transparent, var(--yellow), transparent);
 }
 
-/* СЕРТИФИКАТЫ */
+/* ====================== СЕРТИФИКАТЫ ====================== */
 .certificates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 2.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.5rem;
 }
 
 .certificate-card {
-    background: var(--card-bg);
-    border-radius: 20px;
+    background: #111;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    cursor: pointer;
+    transition: all 0.4s;
 }
 
 .certificate-card:hover {
-    transform: translateY(-14px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.14);
+    border-color: var(--yellow);
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.4);
 }
 
+/* Превью */
 .cert-preview {
-    height: 260px;
+    height: 280px;
     position: relative;
+    overflow: hidden;
+    background: #1a1a1a;
 }
 
 .cert-preview img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.certificate-card:hover img {
+    transform: scale(1.08);
 }
 
 .preview-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.75);
+    background: rgba(255, 204, 0, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.4s;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
+    transition: 0.4s;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    z-index: 2;
 }
 
 .certificate-card:hover .preview-overlay {
     opacity: 1;
 }
 
-/* МОДАЛЬНОЕ ОКНО */
+/* Текстовая часть карточки */
+.certificate-card h3 {
+    padding: 1.5rem 1.8rem 0.8rem 1.8rem !important;
+    margin: 0 !important;
+}
+
+.date {
+    padding: 0 1.8rem 1.8rem 1.8rem !important;
+    margin: 0 !important;
+    color: var(--yellow) !important;
+}
+
+.certificate-card > * {
+    margin: 0;
+}
+/* ====================== МОДАЛЬНОЕ ОКНО ====================== */
 .modal {
     display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.95);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 28, 0.95);
     z-index: 3000;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    overflow: hidden;
 }
 
 .modal-content {
     width: 100%;
     max-width: 1100px;
-    background: white;
-    border-radius: 20px;
+    height: 90vh;
+    background: #111;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
-    border: 1px solid var(--accent);
+    border: 3px solid var(--yellow);
+    box-shadow: 0 0 50px rgba(255, 204, 0, 0.5);
 }
 
 .modal-header {
     padding: 1.2rem 2rem;
-    background: #f8fafc;
+    background: #1a2338;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 2px solid var(--yellow);
+}
+
+.modal-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.4rem;
 }
 
 .close-modal {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
+    color: #ffcc00;
     cursor: pointer;
-    color: #64748b;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.close-modal:hover {
+    transform: scale(1.2);
+    color: white;
 }
 
 .modal-body {
-    height: 82vh;
-    background: #f1f5f9;
+    height: calc(90vh - 70px);
+    background: #0a0f1c;
 }
 
 .modal-body iframe {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+/* Мобильная адаптация модалки */
+@media (max-width: 768px) {
+    .modal-body {
+        height: calc(100vh - 70px);
+    }
+}
+
+.certificate-card h3 {
+    padding: 1.6rem 1.8rem 0.8rem 1.8rem !important;
+    font-size: 1.35rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+}
+
+.date {
+    padding: 0 1.8rem 1.8rem 1.8rem !important;
+    color: var(--yellow) !important;
+    font-size: 0.97rem !important;
+    margin: 0 !important;
+}
+
+/* Убираем любые возможные отступы у родителя */
+.certificate-card > div:last-child,
+.certificate-card p:last-child {
+    padding-left: 1.8rem !important;
+    padding-right: 1.8rem !important;
+}
+
+/* ====================== РАЗДЕЛ "ОБО МНЕ" ====================== */
+#about .about-content p {
+    font-size: 1.25rem;        /* Большой шрифт */
+    line-height: 1.75;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    color: #1e2937;
+}
+
+/* ====================== КОНТАКТЫ ====================== */
+#contacts .contact-info {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.35rem;
+    line-height: 2.1;
+}
+
+#contacts .contact-info p {
+    margin-bottom: 1.2rem;
+}
+
+#contacts .contact-info strong {
+    color: var(--yellow);
+    font-weight: 600;
+}
+
+#contacts .contact-info a {
+    color: #1e2937;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#contacts .contact-info a:hover {
+    color: var(--yellow);
+    text-decoration: underline;
 }
