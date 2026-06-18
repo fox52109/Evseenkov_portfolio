@@ -47,7 +47,10 @@ const closeBtn = document.querySelector('.close-modal');
 
 function openCertificate(pdfUrl, title) {
     modalTitle.textContent = title;
-    pdfViewer.src = pdfUrl + "#toolbar=0&navpanes=0&scrollbar=1";
+    
+    // Улучшенные параметры для PDF (чтобы не был слишком приближен)
+    pdfViewer.src = pdfUrl + "#toolbar=0&navpanes=0&scrollbar=1&zoom=page-width&view=FitH";
+    
     modal.style.display = 'flex';
 }
 

@@ -598,18 +598,25 @@ h2::after {
     }
 }
 
-/* ====================== ЗАГОЛОВКИ НА МОБИЛЬНЫХ ====================== */
+/* ====================== ЗАГОЛОВКИ НА МОБИЛЬНЫХ (iPhone fix) ====================== */
 @media (max-width: 768px) {
     h2 {
-        font-size: 2.1rem !important;
-        margin-bottom: 3rem !important;
-        letter-spacing: 2px;
+        font-size: 2.0rem !important;
+        margin-bottom: 2.5rem !important;
+        letter-spacing: 1px;
+    }
+    
+    /* Специально для iOS */
+    #about h2,
+    #certificates h2,
+    #contacts h2,
+    #projects h2 {
+        font-size: 1.95rem !important;
     }
 }
 
 @media (max-width: 480px) {
     h2 {
-        font-size: 1.85rem !important;
-        margin-bottom: 2.5rem !important;
+        font-size: 1.75rem !important;
     }
 }
