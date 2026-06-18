@@ -480,3 +480,136 @@ h2::after {
         display: flex;
     }
 }
+
+/* ====================== МОБИЛЬНАЯ АДАПТИВНОСТЬ ====================== */
+
+@media (max-width: 768px) {
+    /* Hero */
+    #hero {
+        min-height: 80vh !important;
+        padding-top: 100px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2.6rem !important;
+        letter-spacing: 2px !important;
+    }
+
+    .hero-content .specialty {
+        font-size: 1.4rem !important;
+    }
+
+    .btn {
+        padding: 14px 30px !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* Навигация */
+    nav {
+        padding: 0.8rem 1rem !important;
+    }
+
+    nav ul {
+        position: fixed !important;
+        top: 60px !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: calc(100vh - 60px) !important;
+        background: rgba(10, 15, 28, 0.98) !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding-top: 4rem !important;
+        gap: 2.5rem !important;
+        transition: left 0.4s ease !important;
+        z-index: 999 !important;
+    }
+
+    nav ul.active {
+        left: 0 !important;
+    }
+
+    /* Гамбургер */
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: white;
+        border-radius: 3px;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.3rem !important;
+    }
+}
+
+/* ====================== СЕРТИФИКАТЫ НА МОБИЛЬНЫХ ====================== */
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr !important;     /* Одна колонка */
+        gap: 1.8rem !important;
+        padding: 0 0.5rem;
+    }
+
+    .certificate-card {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    /* Превью */
+    .cert-preview {
+        height: 240px !important;      /* Чуть ниже на телефоне */
+    }
+
+    .certificate-card h3 {
+        padding: 1.3rem 1.4rem 0.6rem 1.4rem !important;
+        font-size: 1.25rem !important;
+    }
+
+    .date {
+        padding: 0 1.4rem 1.4rem 1.4rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .preview-overlay {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    .cert-preview {
+        height: 220px !important;
+    }
+
+    .certificate-card h3 {
+        font-size: 1.18rem !important;
+    }
+}
+
+/* ====================== ЗАГОЛОВКИ НА МОБИЛЬНЫХ ====================== */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.1rem !important;
+        margin-bottom: 3rem !important;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.85rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+}
